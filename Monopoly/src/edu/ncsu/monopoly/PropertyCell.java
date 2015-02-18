@@ -25,6 +25,11 @@ public class PropertyCell extends Cell {
 
 	public int getRent() {
 		int rentToCharge = rent;
+		rentToCharge = calcMonopoliesRent(rentToCharge);
+		return rentToCharge;
+	}
+
+	private int calcMonopoliesRent(int rentToCharge) {
 		String [] monopolies = theOwner.getMonopolies();
 		for(int i = 0; i < monopolies.length; i++) {
 			if(monopolies[i].equals(colorGroup)) {
