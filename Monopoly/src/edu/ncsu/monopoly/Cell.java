@@ -1,7 +1,7 @@
 package edu.ncsu.monopoly;
 
 public abstract class Cell {
-	private boolean available = true;
+	protected boolean available = true;
 	private String name;
 	protected Player theOwner;
 
@@ -9,7 +9,7 @@ public abstract class Cell {
 		return name;
 	}
 
-	public Player getOwner() {
+	public Player getTheOwner() {
 		return theOwner;
 	}
 	
@@ -17,25 +17,25 @@ public abstract class Cell {
 		return 0;
 	}
 
-	public boolean isAvailable() {
-		return available;
-	}
-	
 	public abstract void playAction();
 
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	
 	void setName(String name) {
 		this.name = name;
 	}
 
-	public void setOwner(Player owner) {
+	public void setTheOwner(Player owner) {
 		this.theOwner = owner;
 	}
     
     public String toString() {
         return name;
     }
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }
